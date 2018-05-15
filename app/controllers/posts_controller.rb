@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-     @post = Post.new
+     @post = Post.new(params[:id])
   end
 
   def show
