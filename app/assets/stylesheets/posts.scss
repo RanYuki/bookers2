@@ -1,0 +1,50 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+body {
+	margin: 33px;
+	line-height: 18px;
+	font-size: 13px;
+}
+h1 {
+	display: block;
+	font-size: 2em;
+	-webkit-margin-before: 0.67em;
+	-webkit-margin-after: 0.67em;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+thread {
+	display: table-header-group;
+	vertical-align: middle;
+}
+th {
+	padding: 1px 1px 5px 1px;
+	font-weight: bold;
+}
+td, span {
+	padding: 0px 5px 7px 5px;
+}
+a {
+	color: #000;
+}
+h2 {
+	display: block;
+	font-size: 1.5em;
+	-webkit-margin-before: 0.83em;
+	-webkit-margin-after: 0.83em;
+}
+.field, .action {
+	display: block;
+	margin-bottom: 10px;
+}
+label {
+	display: block;
+	cusor: default;
+	margin: 0px;
+}

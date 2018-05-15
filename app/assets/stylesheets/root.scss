@@ -1,0 +1,27 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 13px;
+}
+
+body {
+	margin: 33px;
+}
+h1 {
+	display: block;
+	font-size: 2em;
+	line-height: 18px;
+}
+a:visited {
+	color: #666;
+}
+a:hover {
+	color: #fff;
+	background-color: #000;
+}
+p {
+	display: block;
+	margin: 33px;
+}
