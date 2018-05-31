@@ -1,0 +1,17 @@
+<body>
+	<h2>User info</h2>
+	<%= attachment_image_tag @user, :image_id, :fill,100,100, format:'jpeg' %>
+	<div class="table">
+		<tr>
+			<th>name</th>
+			<th><%= @user.name %></th>
+		</tr>
+		<tr>
+			<th>introduction</th>
+			<th><%= @user.introduction %></th>
+		</tr>
+	</table>
+	<button type="button" class="btn btn-default btn-block">
+		<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+	</button>
+</body>

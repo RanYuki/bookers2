@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-	resources :posts
-    get 'post/top' => 'root#top'
+
+  devise_for :users
+  root 'root#top'
+  resources :posts
+  resources :users, only:[:show, :index]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

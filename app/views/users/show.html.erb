@@ -1,0 +1,29 @@
+<body>
+<%= render 'root/header' %>
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-3">
+			<%= render 'users/profile' %>
+		</div>
+		<div class="col-md-9">
+			<h2>Books</h2>
+			<table>
+				<tr>
+					<th></th>
+					<th>Titile</th>
+					<th>Opinion</th>
+					<th>   </th>
+				</tr>
+				<tr>
+					<td><%= link_to "/app/assets/images"%></td>
+					<td></td>
+					<!-- <td><%= link_to ,  %></td> -->
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<%= render 'root/footer' %>

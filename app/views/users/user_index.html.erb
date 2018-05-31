@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<table class="user-index">
+				<th>
+					<tr>
+					    <td>image</td>
+					    <td>name</td>
+					    <td colspan="3">  </td>
+					</tr>
+				</th>
+				<% @users.each do |user| %>
+					<tr>
+					    <td><%= user.image_id %></td>
+					    <td><%= user.name %></td>
+					    <td><%= link_to "show", "users/[:id]" %></td>
+					</tr>
+				</th>
+			</table>
+		</div>
+	</div>
+</div>
