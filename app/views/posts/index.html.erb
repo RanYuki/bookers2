@@ -1,40 +1,43 @@
-<header>
-	<h1>Books</h1>
-</header>
+<div class="container clearfix">
 
-<main class="clearfix">
-	<table class="books-index">
-	  <thread>
-    <tr>
-	  	<th>Title</th>
-	  	<th>Body</th>
-	  	<th>    </th>
-	  </tr>
-    </thread>
-	  <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><span><%= link_to 'Show', post %></span>
-          <span><%= link_to 'Edit', edit_post_path(post.id) %></span>  <span><%= link_to 'Destroy', post_path(post), method: :delete %></span></td>
-       </tr>
-       <% end %>
-  </table>
-    <section class="post-box">
-      <h2>New Book</h2>
-      <%= form_for(@post) do |f| %>
-      <div class="field">
-        <label for="title">Title</label>
-        <div class="input"><%= f.text_field :title %></div>
-      </div>
-      <div class="field">
-        <label for="body">Body</label>
-        <div class="input"><%= f.text_area :body %></div>
-      </div>
-      <div class="action">
-        <div class="submit"><%= f.submit 'Create Book' %></div>
-      </div>
+  <% flash.each do |message_type, message| %>
+    <div class="success-message">
+      <%= message %>
+    </div>
+  <% end %>
 
-      <% end %>
-    </section>
-</main>
+  <div class="row">
+    <div class="col-xs-3">
+     	<%= render 'users/profile', user: current_user %>
+      <%= render 'posts/create', post: @post %>
+    </div>
+
+    <div class="col-md-9">
+      <h1>Books</h1>
+      <table class="table table-hover table-inverse">
+	      <thead>
+          <tr>
+	  	      <th></th>
+	  	      <th>Title</th>
+	  	      <th>Opinion</th>
+	        </tr>
+        </thead>
+	        <% @posts.each do |post| %>
+          <tr>
+            <td>
+              <% if post.user.image_id? %>
+                <%= attachment_image_tag post.user, :image, :fill,40,40, format:'jpeg' %>
+              <% else %>
+                <%= image_tag "no_image.jpg", size: '40x40' %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to post.title, post_path(post.id) %>
+            </td>
+            <td><%= post.body %></td>
+          </tr>
+          <% end %>
+      </table>
+    </div>
+  </div>
+</div>

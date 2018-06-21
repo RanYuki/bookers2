@@ -1,17 +1,26 @@
-<body>
+<div class="profile-contents">
+
 	<h2>User info</h2>
-	<%= attachment_image_tag @user, :image_id, :fill,100,100, format:'jpeg' %>
-	<div class="table">
+
+	    <%= attachment_image_tag user, :image, :fill,100,100, format:'jpeg',fallback: "no_image.jpg" %>
+
+	<table class="table">
+	  <tbody class="profile-contents">
 		<tr>
-			<th>name</th>
-			<th><%= @user.name %></th>
+			<td>name</td>
+			<td><%= user.name %></td>
 		</tr>
 		<tr>
-			<th>introduction</th>
-			<th><%= @user.introduction %></th>
+			<td>introduction</td>
+			<td><%= user.introduction %></td>
 		</tr>
+	  </tbody>
 	</table>
-	<button type="button" class="btn btn-default btn-block">
-		<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-	</button>
-</body>
+
+	<% if user == current_user %>
+	  <%=link_to edit_user_path(current_user), class:'btn btn-default btn-block' do %>
+	    <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+	  <% end %>
+	<% end %>
+
+</div>

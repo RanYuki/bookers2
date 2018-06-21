@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  root 'root#top'
-  resources :posts
-  resources :users, only:[:show, :index]
+  devise_for :users, :controllers => {
+   :registrations => 'users/registrations'}
+  root 'posts#top'
+  resources :posts, :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

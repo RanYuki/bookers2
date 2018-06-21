@@ -1,19 +1,25 @@
-<body>
-  <h1>Editing Book</h1>
-  <%= form_for(@post) do |f| %>
-  <div class="field">
-      <label for="title">Title</label>
-      <div class="input"><%= f.text_field :title %></div>
-  </div>
-  <div class="field">
-      <label for="title">Body</label>
-      <div class="input"><%= f.text_area :body %></div>
-  </div>
-  <div class="action">
-      <%= f.submit 'Update Book' %>
-  </div>
-  <% end %>
+<div class="contrainer clearfix">
 
-  <%= link_to 'Show', post_path %> | 
-  <%= link_to 'Back', posts_path %>
-</body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1>Editing Book</h1>
+      <%= form_for(@post) do |f| %>
+        <div class="field row">
+          <label for="title">Title</label>
+          <div class="book_title"><%= f.text_field :title %></div>
+        </div>
+        <div class="field row">
+          <label for="title">Body</label>
+          <div class="book_body"><%= f.text_area :body %></div>
+        </div>
+        <div class="action row">
+          <%= f.submit 'Update Book', class: "btn btn-primary col-md-12" %>
+        </div>
+      <% end %>
+      <%= link_to "Show", user_path(current_user) %> |
+      <%= link_to "Back", posts_path %>
+    </div>
+  </div>
+
+</div>

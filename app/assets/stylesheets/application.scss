@@ -1,0 +1,101 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "helvetica Neue", Helvetica, Arial,  sans-serif;
+	font-size: 14px;
+	line-height: 18px;
+}
+.item {
+	color:red;
+}
+.input-mysize {
+	height: 26px;
+	padding: 1px;
+}
+.action {
+	margin-bottom: 10px;
+}
+a:hover {
+	color: #fff;
+	background-color: #000;
+	text-decoration: none;
+}
+
+
+.success-message {
+	color: green;
+	margin-bottom: 10px;
+}
+.title {
+	float: left;
+	color: #fff;
+	font-size: 20px;
+}
+.nav-title {
+	margin-top: 10px;
+}
+.nav li {
+	list-style: none;
+	float: left;
+	display: inline-block;
+	list-style: none;
+	font-size: 13px;
+}
+.clearfix::before {
+	content: "";
+	display: block;
+	clear: both;
+	padding-top: 51px;
+}
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.footer-text {
+	float: right;
+}
+header .container {
+	height: 50px;
+}
+
+.btn a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+.table th::first-cild {
+	border-top: 0;
+}
+
+.book_title input, .book_body textarea {
+	width: 100%;
+	padding: 2px 15px;
+	margin-bottom: 10px;
+}
+
+table .profile-contents {
+	font-weight: bold;
+}

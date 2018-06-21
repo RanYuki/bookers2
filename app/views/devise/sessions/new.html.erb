@@ -1,8 +1,5 @@
-<body>
-<%= render 'root/header'%>
- <div class="container">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+<div class="container clearfix">
+
       <h2>Log in</h2>
 
  <%- flash.each do |name, msg| -%>
@@ -14,12 +11,12 @@
 
       <div class="field">
           <%= f.label :name %><br />
-          <%= f.text_field :name, autocomplete: "on" %>
+          <%= f.text_field :name, class:"input-mysize", autocomplete: "on" %>
       </div>
 
       <div class="field">
         <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, class:"input-mysize", autocomplete: "on" %>
       </div>
 
         <% if devise_mapping.rememberable? -%>
@@ -30,13 +27,11 @@
         <% end %>
 
       <div class="actions">
-       <%= f.submit "Log in" %>
+       <%= f.submit "Log in", class:"btn btn-primary" %>
       </div>
       <% end %>
-    </div>
-  </div>
+
 
   <%= render "devise/shared/links" %>
-  <%= render 'root/footer'%>
- </div>
-</body>
+
+</div>

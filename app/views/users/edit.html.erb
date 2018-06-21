@@ -1,28 +1,27 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-          <%= render 'users/profile' %>
-        </div>
-        <div class="col-md-9">
-	        <h2>User info</h2>
+<div class="container clearfix">
+
+          <h2>User info</h2>
 
             <div class="form-body">
             <%= form_for(@user) do |f| %>
 
-            <div class="form-group">
-              <label class="control-label sr-only">Name</label>
-              <%= f.text_field :name, autofocus: true, class:"form-control" %>
-            </div>
-            <div class="form-group has-icon">
-              <%= attachment_image_tag @user, :image_id, :fill, 60, 60, class: "img-circle pull-left profile-thumb" %>
-              <%= f.attachment_field :image_id, class: "user-edit-form", id:"Image" %>
-            </div>
-            <div class="form-group">
-        	  <%= f.textarea :introduction, id:"introduction" %>
+              <div class="form-group">
+                <label class="control-label">Name</label>
+                <%= f.text_field :name, autofocus: true, size: "20" %>
+              </div>
+              <div class="form-group has-icon">
+                <label class="control-label">Image</label>
+                <%= attachment_image_tag @user, :image, :fill, 60, 60, class: "img-circle pull-left profile-thumb" %>
+                <%= f.attachment_field :image, class: "user-edit-form", id:"Image" %>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Introduction</label>
+        	      <%= f.text_area :introduction, id:"introduction" %>
+              </div>
+              <div class="action">
+                <%= f.submit "Update User", class: "btn btn-primary" %>
+              </div>
 
-              <%= f.submit "Update User", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
             <% end %>
             </div>
-        </div>
-    </div>
 </div>

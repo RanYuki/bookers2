@@ -1,0 +1,41 @@
+<div class="container clearfix">
+
+    <% flash.each do |message_type, message| %>
+	    <div class="success-message">
+	    	<%= message %>
+	    </div>
+	<% end %>
+
+    <div class="row">
+    	<div class="col-xs-3">
+            <%= render 'users/profile', user: current_user %>
+            <%= render 'posts/create', post: @post_new %>
+        </div>
+
+		<div class="col-xs-9">
+			<table class="table table-hover table-inverse">
+				<thead>
+					<tr>
+					    <th>image</th>
+					    <th>name</th>
+					    <th>  </th>
+					</tr>
+				</thead>
+				<% @users.each do |user| %>
+					<tr>
+					    <td>
+					    	<% if user.image_id? %>
+	                            <%= attachment_image_tag user, :image, :fill,40,40, format:'jpeg' %>
+	                        <% else %>
+	                            <%= image_tag "no_image.jpg", size: '40x40' %>
+	                        <% end %>
+	                    </td>
+					    <td><%= user.name %></td>
+					    <td><%= link_to "show", user_path(user.id) %></td>
+					</tr>
+				<% end %>
+				</th>
+			</table>
+		</div>
+	</div>
+</div>

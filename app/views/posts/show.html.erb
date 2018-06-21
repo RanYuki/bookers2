@@ -1,17 +1,33 @@
-<body>
-	<table>
-		<tr><%= @user.image_id %><br>
-		    <%= @user.name %></tr>
-		<tr><%= @post.title %></tr>
-		<tr><%= @post.body %></tr>
-		<tr><%= link_to edit_post_path %>
-			<button class="edit_post">Edit</button>
-		</tr>
-		<tr><%= link_to posts_path, method: :delete %>
-			<button class="destroy_post">Destroy</button>
-		</tr>
-	</table>
+<div class="container clearfix">
+  <div class="row">
+  	<div class="col-xs-3">
+      <%= render 'users/profile', user: @user %>
+      <%= render 'posts/create', post: @post_new %>
+    </div>
 
-  <%= link_to 'Edit', edit_post_path %> | 
-  <%= link_to 'Back',  posts_path %>
-</body>
+  	<div class="col-xs-9">
+        <h2>Book detail</h2>
+	    <table class="table">
+	      <tbody>
+		    <tr>
+		      <td>
+	              <%= attachment_image_tag @user, :image, :fill,40,40, format:'jpeg',fallback: "no_image.jpg"  %>
+	            <br>
+	            <%= link_to @post.user.name, user_path(@post.user) %>
+	          </td>
+		      <td><%= @post.title %></td>
+		      <td><%= @post.body %></td>
+		     <% if @post.user == current_user %>
+		      <td>
+			    <%= button_to "edit", edit_post_path(@post), method: :get, class:"btn btn-success" %>
+		      </td>
+		      <td>
+			    <%= button_to "Destroy", post_path(@post), method: :delete, class:"btn btn-danger" %>
+		      </td>
+		     <% end %>
+		    </tr>
+		  </tbody>
+	    </table>
+	</div>
+  </div>
+</div>
