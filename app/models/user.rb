@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_many :posts
   validates :name, presence: true, length:{ in:2..20 }
   attachment :image
+  validates :introduction, length: { maximum: 50 }
 end
 

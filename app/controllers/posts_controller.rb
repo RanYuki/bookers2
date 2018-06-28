@@ -25,6 +25,7 @@ class PostsController < ApplicationController
        redirect_to posts_path
     else
       @posts = Post.all
+      flash[:notice] = 'Limit of the number of characters is 1~200.'
       render :index
     end
   end
